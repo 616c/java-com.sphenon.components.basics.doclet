@@ -27,22 +27,13 @@ import com.sphenon.ui.core.classes.*;
 import java.util.Vector;
 import java.util.Map;
 
-/**
-  Usabillty in specific publication contexts
-*/
-public enum DocletForm implements UIEquipped, TSMEquipped {
+public enum DocletLayout implements UIEquipped, TSMEquipped {
 
     // ----------------------------------------------------------------------------------------
-    None,           //
-    Article,        // usable standalone, closed scope, readable
-                    // without context, with introduction etc.
-                    // (Print)
-    Content,        // some paragraphs, possibly with subsections
-    Section,        // content, complete with a headline
-    Slide,          // one page in a (office) presentation
-    WebPage,        // (Website)
+    None,            //
+    Single,          // whole, undevided item (single page)
+    Parts            // separate parts
     ;
-    // Vielleicht auch: Hypertext|(ClickableDynamic/Readonly/Fixed)Presentation|Print/TextDocument/Word/Article
 
     static protected Map<String,Vector<UIEquipment>> ui_equipment_map;
 
@@ -67,12 +58,12 @@ public enum DocletForm implements UIEquipped, TSMEquipped {
         return "String";
     }
 
-    static public String convertToPersistentType   (CallContext context, DocletForm ad_instance) {
+    static public String convertToPersistentType   (CallContext context, DocletLayout ad_instance) {
         return ad_instance == null ? null : ad_instance.name();
     }
 
-    static public DocletForm convertFromPersistentType (CallContext context, String sm_instance) {
-        return sm_instance == null ? null : java.lang.Enum.<DocletForm>valueOf(DocletForm.class, sm_instance);
+    static public DocletLayout convertFromPersistentType (CallContext context, String sm_instance) {
+        return sm_instance == null ? null : java.lang.Enum.<DocletLayout>valueOf(DocletLayout.class, sm_instance);
     }
 
     public Object _getState(CallContext context) {

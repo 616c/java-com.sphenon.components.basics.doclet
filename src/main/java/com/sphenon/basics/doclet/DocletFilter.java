@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -20,6 +20,7 @@ import com.sphenon.basics.notification.*;
 import com.sphenon.basics.customary.*;
 import com.sphenon.basics.encoding.*;
 import com.sphenon.basics.quantities.*;
+import com.sphenon.basics.variatives.classes.*;
 
 import java.util.Vector;
 
@@ -119,6 +120,20 @@ public class DocletFilter {
 
     public void setAspectExcludeRegExp (CallContext context, String aspect_exclude_regexp) {
         this.aspect_exclude_regexp = aspect_exclude_regexp;
+    }
+
+    protected String language_selector;
+
+    public String getLanguageSelector (CallContext context) {
+        return this.language_selector;
+    }
+
+    public String defaultLanguageSelector (CallContext context) {
+        return null;
+    }
+
+    public void setLanguageSelector (CallContext context, String language_selector) {
+        this.language_selector = language_selector;
     }
 
     protected String language_include_regexp;
@@ -518,6 +533,11 @@ public class DocletFilter {
             }
             if (language_exclude_regexp != null) {
                 if (language.matches(language_exclude_regexp) == true) { if (debug) { System.err.println("no match: Language exclude"); } return false; }
+            }
+            if (    language_selector != null && language_selector.isEmpty() == false
+                 && language != null && language.isEmpty() == false
+               ) {
+                if (HumanLanguageVariantFinder.matches(context, language, language_selector) == false) { if (debug) { System.err.println("no match: Language selector"); } return false; }
             }
         }
         {

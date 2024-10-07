@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -20,6 +20,8 @@ import com.sphenon.basics.notification.*;
 import com.sphenon.basics.customary.*;
 import com.sphenon.basics.encoding.*;
 import com.sphenon.basics.accessory.*;
+
+import com.sphenon.ui.annotations.*;
 
 /********************************************************************************/
 /* [ToDo] Consolidate Redundancies!                                             */
@@ -76,6 +78,7 @@ import com.sphenon.basics.accessory.*;
    Doclets are associated with all kinds of artefacts of a software system:
    with bundles, models, ocps, templates, and source code.
  */
+@UIName("js:instance.getEntity(context)+' - '+instance.getEntityType(context)+' - '+instance.getEntityVersion(context)")
 public interface Doclet extends MonitorableCoreObject, DocletItem {
     /**
        Get raw UTF-8 encoded XML
@@ -85,6 +88,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
     /**
        General categorisation of this Doclet.
      */
+    @UIAttribute
     public String getDocletType(CallContext context);
 
     /**
@@ -94,6 +98,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
        @return List of vertical-slash-separated security class strings, usable
                in conjunction with an {@link Authority}
      */
+    @UIAttribute
     public String getSecurityClass(CallContext context);
     // SphenonOnly|SphenonPartner|SphenonCustomer|Public
     // InternalUseOnly|BusinessPartner|Customer|Public
@@ -104,6 +109,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return List of vertical-slash-separated audience classifier names.
      */
+    @UIAttribute
     public String getAudience(CallContext context);
 
     /**
@@ -111,6 +117,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return An ISO 639 language identifier.
      */
+    @UIAttribute
     public String getLanguage(CallContext context);
 
     /**
@@ -118,6 +125,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return List of vertical-slash-separated intent classifier names.
      */
+    @UIAttribute
     public String getIntent(CallContext context);
 
     /**
@@ -126,6 +134,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return A classifier name of an extent of material.
      */
+    @UIAttribute
     public String getExtent(CallContext context);
 
     /**
@@ -134,6 +143,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return A classifier name of the degree of completeness of the material.
      */
+    @UIAttribute
     public String getCoverage(CallContext context);
 
     /**
@@ -141,6 +151,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return A classifier name of the maturity of a text piece.
      */
+    @UIAttribute
     public String getMaturity(CallContext context);
 
     /**
@@ -148,6 +159,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return A target medium classifier name.
      */
+    @UIAttribute
     public String getForm(CallContext context);
 
     /**
@@ -155,13 +167,23 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return List of vertical-slash-separated form classifier names.
      */
+    @UIAttribute
     public String getLayout(CallContext context);
+
+    /**
+       A list of styles to be used for styling in the UI, like with CSS.
+
+       @return Space, colon, slash or comma separated list of styles.
+     */
+    @UIAttribute
+    public String[] getStyle(CallContext context);
 
     /**
        Describes the encoding of this doclet. The default is DocBook.
 
        @return {@link Encoding} of this doclet.
      */
+    @UIAttribute
     public Encoding getEncoding(CallContext context);
     // DocBook(default)|Wiki
 
@@ -171,6 +193,7 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return An aspect name.
      */
+    @UIAttribute
     public String getAspect(CallContext context);
 
     /**
@@ -199,5 +222,6 @@ public interface Doclet extends MonitorableCoreObject, DocletItem {
 
        @return A version number.
      */
+    @UIAttribute
     public String getDocletVersion(CallContext context);
 }

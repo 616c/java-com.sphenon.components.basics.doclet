@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -21,6 +21,7 @@ import com.sphenon.basics.customary.*;
 import com.sphenon.basics.encoding.*;
 import com.sphenon.ui.core.*;
 import com.sphenon.ui.core.classes.*;
+import com.sphenon.sm.tsm.TSMEquipped;
 
 import java.util.Vector;
 import java.util.Map;
@@ -29,9 +30,7 @@ import java.util.Map;
     Siehe noch evtl. Reste in doclet.docl
     Hier ist aber nun der Zieltopf!
  */
-public enum DocletType implements UIEquipped {
-
-    /* KEEP IN MIND: JPA DEPENDS ON ORDERING HERE ! */
+public enum DocletType implements UIEquipped, TSMEquipped {
 
     // ----------------------------------------------------------------------------------------
     Label,            //
@@ -89,8 +88,25 @@ public enum DocletType implements UIEquipped {
     Summary,          // become able to decide further investigation                                      // -> Description, Coverage=Summary
                       // decide: interesting?
     Introduction,     // allows classifying the topic, typically less than outline                        // -> Description, Coverage=Introduction
-    Outline           // limited in amount of reading time                                                // -> Description, Coverage=Outline
+    Outline,          // limited in amount of reading time                                                // -> Description, Coverage=Outline
                       // get the idea
+
+    Discussion,       // contains a discussion of some topic, possibly for decision making,
+                      // may contain the following sub-doclets:
+        Agreement,    //
+        Disagreement, //
+        Rating,       //
+        Objection,    // (Einwand)
+        Suggestion,   // (Anregung)
+        Proposition,  // (Vorschlag)
+        Review,       // (Kritik)
+        Decision,     //         
+
+    Comment,          // general comment on the subject, or depending on the location
+                      // on some aspect or on some text piece
+    Note,             // general note to be taken into account by the addressed audience,
+                      // not necessarily concerning the subject itself but e.g. moving
+                      // of some content
     ;
 
     static protected Map<String,Vector<UIEquipment>> ui_equipment_map;
@@ -105,6 +121,24 @@ public enum DocletType implements UIEquipped {
             this.ui_equipments = (ui_equipment_map == null ? null : ui_equipment_map.get(toString()));
         }
         return this.ui_equipments;
+    }
+
+    // TSM mapping ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    static public String getPersistentTypeName (CallContext context) {
+        return "String";
+    }
+
+    static public String convertToPersistentType (CallContext context, DocletType ad_instance) {
+        return ad_instance == null ? null : ad_instance.name();
+    }
+
+    static public DocletType convertFromPersistentType (CallContext context, String sm_instance) {
+        return sm_instance == null ? null : java.lang.Enum.<DocletType>valueOf(DocletType.class, sm_instance);
+    }
+
+    public Object _getState(CallContext context) {
+        return name();
     }
 }
 
@@ -163,16 +197,4 @@ public enum DocletType implements UIEquipped {
 
           Following may typically be used within a discussion:
 
-          Agreement
-          Disagreement
-          Rating
-          Objection        (Einwand)
-          Suggestion       (Anregung)
-          Proposition      (Vorschlag)
-          ...?             (Kritik)
-          Comment          (on subject; not "Comment On Text Of Author")
-          Note             a piece of information
-
-          Decision         
-}
     =================================================================================================== */

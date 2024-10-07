@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet.classes;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -33,8 +33,10 @@ public class Class_DocletPackage extends Class_MonitorableCoreObject implements 
     public Class_DocletPackage(CallContext context) {
     }
 
-    public Class_DocletPackage(CallContext context, String id, String index) {
+    public Class_DocletPackage(CallContext context, String id, String name, String description, String index) {
         this.id = id;
+        this.name = name;
+        this.description = description;
         this.index = index;
     }
 
@@ -46,6 +48,26 @@ public class Class_DocletPackage extends Class_MonitorableCoreObject implements 
 
     public void setId (CallContext context, String id) {
         this.id = id;
+    }
+
+    protected String name;
+
+    public String getName (CallContext context) {
+        return this.name;
+    }
+
+    public void setName (CallContext context, String name) {
+        this.name = name;
+    }
+
+    protected String description;
+
+    public String getDescription(CallContext context) {
+        return this.description;
+    }
+
+    public void setDescription (CallContext context, String description) {
+        this.description = description;
     }
 
     protected String index;
@@ -86,6 +108,16 @@ public class Class_DocletPackage extends Class_MonitorableCoreObject implements 
 
     public void setEntityVersion (CallContext context, String entity_version) {
         this.entity_version = entity_version;
+    }
+
+    protected String[] style;
+
+    public String[] getStyle(CallContext context) {
+        return this.style;
+    }
+
+    public void setStyle(CallContext context, String[] style) {
+        this.style = style;
     }
 
     protected Vector<DocletContainer> entries;

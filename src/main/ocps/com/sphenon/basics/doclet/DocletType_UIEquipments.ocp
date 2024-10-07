@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIEquipmentMap CLASS="Map&lt;String,Vector&lt;UIEquipment&gt;&gt;" xmlns="http://xmlns.sphenon.com/com/sphenon/ui/vui">
+  <Label>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Kennung"         en="Label"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Kennung"         en="Label"/></text>
+  </Label>
+  <Classification>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Klassifizierung" en="Classification"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Klassifizierung" en="Classification"/></text>
+  </Classification>
+  <Group>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Gruppe"          en="Group"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Gruppe"          en="Group"/></text>
+  </Group>
+  <Description>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Beschreibung"    en="Description"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Beschreibung"    en="Description"/></text>
+  </Description>
+  <Definition>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Definition"      en="Definition"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Definition"      en="Definition"/></text>
+  </Definition>
+  <History>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Vorgeschichte"   en="History"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Vorgeschichte"   en="History"/></text>
+  </History>
+  <Outlook>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Ausblick"        en="Outlook"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Ausblick"        en="Outlook"/></text>
+  </Outlook>
+  <Comparison>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Vergleich"       en="Comparison"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Vergleich"       en="Comparison"/></text>
+  </Comparison>
+  <Concept>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Konzept"         en="Concept"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Konzept"         en="Concept"/></text>
+  </Concept>
+  <Glossary>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Glossar"         en="Glossary"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Glossar"         en="Glossary"/></text>
+  </Glossary>
+  <Specification>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Spezifikation"   en="Specification"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Spezifikation"   en="Specification"/></text>
+  </Specification>
+  <FAQ>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="FAQ"             en="FAQ"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="FAQ"             en="FAQ"/></text>
+  </FAQ>
+  <Guidance>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Hilfestellung"   en="Guidance"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Hilfestellung"   en="Guidance"/></text>
+  </Guidance>
+  <HowTo>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="HowTo"           en="HowTo"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="HowTo"           en="HowTo"/></text>
+  </HowTo>
+  <Tutorial>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Anleitung"       en="Tutorial"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Anleitung"       en="Tutorial"/></text>
+  </Tutorial>
+  <Manual>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Handbuch"        en="Manual"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Handbuch"        en="Manual"/></text>
+  </Manual>
+  <Example>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Beispiel"        en="Example"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Beispiel"        en="Example"/></text>
+  </Example>
+  <Guideline>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Richtlinie"      en="Guideline"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Richtlinie"      en="Guideline"/></text>
+  </Guideline>
+  <Directive>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Anweisung"       en="Directive"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Anweisung"       en="Directive"/></text>
+  </Directive>
+  <References>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Verweise"        en="References"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Verweise"        en="References"/></text>
+  </References>
+  <Attachment>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Anlage"          en="Attachment"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Anlage"          en="Attachment"/></text>
+  </Attachment>
+  <Motivation>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Motivation"      en="Motivation"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Motivation"      en="Motivation"/></text>
+  </Motivation>
+  <Rationale>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Begründung"      en="Rationale"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Begründung"      en="Rationale"/></text>
+  </Rationale>
+  <Opinion>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Meinung"         en="Opinion"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Meinung"         en="Opinion"/></text>
+  </Opinion>
+  <Overview>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Übersicht"       en="Overview"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Übersicht"       en="Overview"/></text>
+  </Overview>
+  <Summary>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Zusammenfassung" en="Summary"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Zusammenfassung" en="Summary"/></text>
+  </Summary>
+  <Introduction>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Einführung"      en="Introduction"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Einführung"      en="Introduction"/></text>
+  </Introduction>
+  <Outline>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Abriss"          en="Outline"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Abriss"          en="Outline"/></text>
+  </Outline>
+  <Outline>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Kommentar"       en="Comment"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Kommentar"       en="Comment"/></text>
+  </Outline>
+  <Outline>
+    <name Type="Name"><Value CLASS="Variative_VariantVector_String_" de="Notiz"           en="Note"/></name>
+    <text Type="Text"><Value CLASS="Variative_VariantVector_String_" de="Notiz"           en="Note"/></text>
+  </Outline>
+</UIEquipmentMap>

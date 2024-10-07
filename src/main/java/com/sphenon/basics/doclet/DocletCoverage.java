@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -19,6 +19,7 @@ import com.sphenon.basics.message.*;
 import com.sphenon.basics.notification.*;
 import com.sphenon.basics.customary.*;
 import com.sphenon.basics.encoding.*;
+import com.sphenon.sm.tsm.TSMEquipped;
 
 import com.sphenon.ui.core.*;
 import com.sphenon.ui.core.classes.*;
@@ -29,9 +30,7 @@ import java.util.Map;
 /**
    In relation to the topic at hand, to which degree the information is complete
  */
-public enum DocletCoverage implements UIEquipped {
-
-    /* KEEP IN MIND: JPA DEPENDS ON ORDERING HERE ! */
+public enum DocletCoverage implements UIEquipped, TSMEquipped {
 
     // ----------------------------------------------------------------------------------------
     None,           //
@@ -60,5 +59,23 @@ public enum DocletCoverage implements UIEquipped {
             this.ui_equipments.add(new Class_UIEquipment(context, UIEquipmentType.Text, toString()));
         }
         return this.ui_equipments;
+    }
+
+    // TSM mapping ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    static public String getPersistentTypeName (CallContext context) {
+        return "String";
+    }
+
+    static public String convertToPersistentType (CallContext context, DocletCoverage ad_instance) {
+        return ad_instance == null ? null : ad_instance.name();
+    }
+
+    static public DocletCoverage convertFromPersistentType (CallContext context, String sm_instance) {
+        return sm_instance == null ? null : java.lang.Enum.<DocletCoverage>valueOf(DocletCoverage.class, sm_instance);
+    }
+
+    public Object _getState(CallContext context) {
+        return name();
     }
 }

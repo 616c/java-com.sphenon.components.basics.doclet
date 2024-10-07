@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -20,11 +20,22 @@ import com.sphenon.basics.notification.*;
 import com.sphenon.basics.customary.*;
 import com.sphenon.basics.encoding.*;
 
+import com.sphenon.ui.annotations.*;
+
 import java.util.Vector;
 
+@UIName       ("js:instance.getId(context)+' - '+instance.getName(context)")
+@UIClassifier ("DocletPackage")
+@UIParts      ( { "js:instance.getGroups(context)",
+                  "js:instance.getPackages(context)"
+                } )
 public interface DocletPackage extends DocletContainer, DocletItem {
 
     public String                getId(CallContext context);
+
+    public String                getName(CallContext context);
+
+    public String                getDescription(CallContext context);
 
     public Vector<DocletGroup>   getGroups(CallContext context);
 

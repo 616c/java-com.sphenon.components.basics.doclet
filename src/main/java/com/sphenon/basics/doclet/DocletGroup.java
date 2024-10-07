@@ -1,7 +1,7 @@
 package com.sphenon.basics.doclet;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -21,8 +21,15 @@ import com.sphenon.basics.customary.*;
 import com.sphenon.basics.encoding.*;
 import com.sphenon.basics.locating.*;
 
+import com.sphenon.ui.annotations.*;
+
 import java.util.Vector;
 
+@UIName       ("js:instance.getEntity(context)+' - '+instance.getEntityType(context)+' - '+instance.getEntityVersion(context)")
+@UIClassifier ("DocletGroup")
+@UIParts      ( { "js:instance.getDoclets(context)",
+                  "js:instance.getSubEntityDoclets(context)"
+                } )
 public interface DocletGroup extends DocletContainer, DocletItem {
 
     public Vector<Doclet> getDoclets(CallContext context);
@@ -44,6 +51,7 @@ public interface DocletGroup extends DocletContainer, DocletItem {
        @return List of vertical-slash-separated security class strings, usable
                in conjunction with an {@link Authority}
      */
+    @UIAttribute
     public String getSecurityClass(CallContext context);
 
     /**
@@ -52,6 +60,7 @@ public interface DocletGroup extends DocletContainer, DocletItem {
 
        @return List of vertical-slash-separated audience classifier names.
      */
+    @UIAttribute
     public String getAudience(CallContext context);
 
     /**
@@ -59,15 +68,25 @@ public interface DocletGroup extends DocletContainer, DocletItem {
 
        @return List of vertical-slash-separated form classifier names.
      */
+    @UIAttribute
     public String getLayout(CallContext context);
     // Parts|Single
     // whether in a single webpage or whether on multiple pages
+
+    /**
+       A list of styles to be used for styling in the UI, like with CSS.
+
+       @return Space, colon, slash or comma separated list of styles.
+     */
+    @UIAttribute
+    public String[] getStyle(CallContext context);
 
     /**
        The Entity locator as an object
 
        @return The locator object
      */
+    @UIAttribute
     public Locator getEntityLocator(CallContext context);
 
     public Vector<String> getEntityLocatorPath(CallContext context);
